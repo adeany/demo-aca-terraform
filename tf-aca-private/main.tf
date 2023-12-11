@@ -161,12 +161,12 @@ resource "azurerm_container_app" "container_app" {
     }
   }
 
-  # ingress {
-  #     external_enabled           = true
-  #     target_port = 
-  #     traffic_weight {
-  #       name                     = "primary"
-  #       percentage               = 100
-  #     }
-  # }
+  ingress {
+      external_enabled           = true
+      target_port                = 80
+      allow_insecure_connections = false
+      traffic_weight {
+        percentage               = 100
+      }
+  }
 }
