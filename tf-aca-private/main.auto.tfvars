@@ -28,6 +28,6 @@ storage_account_tier = "Standard"
 ip_rules = ["100.0.0.1"]
 
 # CONTAINER APP
-managed_environment_name = "aca-env-amd-test-tf"
-container_app_name = "aca-amd-test-tf"
+managed_environment_name = "aca-env-amd-test2-tf"
+container_app_name = "aca-amd-test2-tf"
 container_app_image = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
