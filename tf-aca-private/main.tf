@@ -150,7 +150,7 @@ resource "azurerm_container_app" "container_app" {
   name                         = var.container_app_name
   resource_group_name          = azurerm_resource_group.rg.name
   container_app_environment_id = azurerm_container_app_environment.managed_environment.id
-  revision_mode                = "Single"
+  revision_mode                = "Multiple"
 
   template {
     container {
@@ -160,4 +160,13 @@ resource "azurerm_container_app" "container_app" {
       memory = "0.5Gi"
     }
   }
+
+  # ingress {
+  #     external_enabled           = true
+  #     target_port = 
+  #     traffic_weight {
+  #       name                     = "primary"
+  #       percentage               = 100
+  #     }
+  # }
 }
