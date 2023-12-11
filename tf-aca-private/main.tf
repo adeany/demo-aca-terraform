@@ -150,7 +150,7 @@ resource "azurerm_container_app" "container_app" {
   name                         = var.container_app_name
   resource_group_name          = azurerm_resource_group.rg.name
   container_app_environment_id = azurerm_container_app_environment.managed_environment.id
-  revision_mode                = "Multiple"
+  revision_mode                = "Single"
 
   template {
     container {
