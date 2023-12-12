@@ -142,6 +142,7 @@ resource "azurerm_container_app_environment" "managed_environment" {
   resource_group_name            = azurerm_resource_group.rg.name
   log_analytics_workspace_id     = azurerm_log_analytics_workspace.law.id
   infrastructure_subnet_id       = azurerm_subnet.subnet.id
+  internal_load_balancer_enabled = true
 }
 
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app
