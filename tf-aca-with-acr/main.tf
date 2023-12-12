@@ -263,4 +263,16 @@ resource "azurerm_container_app" "container_app" {
         percentage               = 100
       }
   }
+
+  registry {
+      server               = azurerm_container_registry.acr.login_server
+      username             = azurerm_container_registry_token.pulltoken.name
+      password_secret_name = "secname"
+  }
+
+  secret {
+    name = "secname"
+    value = azurerm_container_registry_token_password.pulltokenpassword.password1[0].value
+  }
+
 }
